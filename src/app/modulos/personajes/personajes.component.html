@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Ejemplo de comunicación de componentes</h3>
+    <h4>Breaking Bad API</h4>
+    <p-table [value]="listCharacters" [(selection)]="selectedCharacters" dataKey="id" [rowHover]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [loading]="loading" responsiveLayout="scroll" [paginator]="true" [filterDelay]="0">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nombre</th>
+                <th>Cumpleaños</th>
+                <th>Ocupación</th>
+                <th>Alias</th>
+                <th>Interpretado por</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-character>
+            <tr>
+                <td>{{character.name}}</td>
+                <td>{{character.birthday}}</td>
+                <td>{{character.occupation}}</td>
+                <td>{{character.nickname}}</td>
+                <td>{{character.portrayed}}</td>
+                <td>{{character.status}}</td>
+                <td style="text-align: center">
+                    <button pButton type="button" (click)="showDetails(character)" class="p-button-secondary" icon="pi pi-exclamation-circle"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

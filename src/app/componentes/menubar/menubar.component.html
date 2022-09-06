@@ -1,0 +1,12 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <p-button type="button" class="mr-2" (click)="emitMenu()" icon="pi pi-bars"></p-button>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText placeholder="Search" />
+        </span>
+    </ng-template>
+</p-menubar>
+<app-sidebar [eventMenu]="visibleSidebar1" (hideMenuEvent)="receiveMessage($event)"></app-sidebar>
